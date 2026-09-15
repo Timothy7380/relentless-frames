@@ -1,0 +1,61 @@
+# Decap CMS config — lets the studio owner log in at /admin and swap
+# photos without touching code or the file system directly.
+#
+# Two placeholders below MUST be filled in before this works (see the
+# setup guide, CMS-SETUP.md, in the project root):
+#   1. backend.repo      — your "github-username/repo-name"
+#   2. backend.base_url  — the URL of the small OAuth helper (a Cloudflare
+#                           Worker) that handles the GitHub login handshake
+#
+# Everything else here can be left as-is.
+
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/relentless-frames   # <-- fill in
+  branch: main
+  base_url: https://YOUR-WORKER-SUBDOMAIN.workers.dev   # <-- fill in
+  auth_endpoint: auth
+
+# Photos the owner uploads are written straight into assets/img/, the same
+# folder the site already reads from — no naming rules to remember.
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+# The owner never edits raw files; Decap always shows the friendly form
+# below and writes the result into assets/data/images.json for you.
+collections:
+  - name: "photos"
+    label: "Photos"
+    files:
+      - file: "assets/data/images.json"
+        label: "Site Photos"
+        name: "images"
+        fields:
+          - label: "Studio page photos"
+            name: "studio"
+            widget: object
+            fields:
+              - { label: "Studio photo 1", name: "photo1", widget: image }
+              - { label: "Studio photo 2", name: "photo2", widget: image }
+
+          - label: "Categories"
+            name: "categories"
+            widget: list
+            summary: "{{fields.slug}}"
+            fields:
+              - { label: "Category (do not edit)", name: "slug", widget: hidden }
+              - { label: "Hero photo (home page + category page header)", name: "hero", widget: image }
+              - { label: "Thumbnail (Work index card)", name: "thumb", widget: image }
+
+          - label: "Individual shoots"
+            name: "shoots"
+            widget: list
+            summary: "{{fields.slug}}"
+            fields:
+              - { label: "Shoot (do not edit)", name: "slug", widget: hidden }
+              - { label: "Hero photo (shoot page header)", name: "hero", widget: image }
+              - { label: "Thumbnail (category listing card)", name: "thumb", widget: image }
+              - { label: "Gallery photo 1", name: "plate1", widget: image }
+              - { label: "Gallery photo 2", name: "plate2", widget: image }
+              - { label: "Gallery photo 3", name: "plate3", widget: image }
+              - { label: "Gallery photo 4", name: "plate4", widget: image }
