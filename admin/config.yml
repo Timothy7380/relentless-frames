@@ -11,9 +11,9 @@
 
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/relentless-frames   # <-- fill in
+  repo: Timothy7380/relentless-frames   # <-- fill in
   branch: main
-  base_url: https://YOUR-WORKER-SUBDOMAIN.workers.dev   # <-- fill in
+  base_url: https://rf-cms-auth.timmyberry738.workers.dev   # <-- fill in
   auth_endpoint: auth
 
 # Photos the owner uploads are written straight into assets/img/, the same
