@@ -42,6 +42,7 @@
     },
     {
       slug: 'portraits',
+      heroFocus: 22, thumbFocus: 35,
       duration: '60–90 min',
       title: 'Portraits',
       discipline: 'Portraits',
@@ -80,6 +81,7 @@
     },
     {
       slug: 'church-worship',
+      heroFocus: 16, thumbFocus: 16,
       duration: '2–4 hours',
       title: 'Church & Worship',
       discipline: 'Church & Worship',
@@ -99,6 +101,7 @@
     },
     {
       slug: 'lifestyle-candid',
+      heroFocus: 26, thumbFocus: 26,
       duration: '2 hours',
       title: 'Lifestyle & Candid',
       discipline: 'Lifestyle & Candid',
@@ -131,6 +134,7 @@
     // ---- Wedding ------------------------------------------------------
     {
       cat: 'wedding', slug: 'charis-emma', title: 'Charis & Emma',
+      platesFocus: [null, 25, 40],
       when: 'Recent',
       blurb: 'A full day of celebration, from quiet morning moments to the last dance.',
       story: [
@@ -140,6 +144,8 @@
     },
     {
       cat: 'wedding', slug: 'praise-bolu', title: 'Praise & Bolu',
+      heroFocus: 11, thumbFocus: 11,
+      platesFocus: [null, 39, 36, null, 40, null],
       when: 'Recent',
       blurb: 'Two families, one day, and a celebration carried through every hour of it.',
       story: [
@@ -149,6 +155,8 @@
     },
     {
       cat: 'wedding', slug: 'taylor-ade', title: 'Taylor & Ade',
+      heroFocus: 28, thumbFocus: 28,
+      platesFocus: [43, null, 26, null, 24, 11, 39, 9, null, null],
       when: 'Recent',
       blurb: 'A wedding day worked in full, from the getting-ready hours through the reception.',
       story: [
@@ -158,6 +166,8 @@
     },
     {
       cat: 'wedding', slug: 'tomi-sam', title: 'Tomi & Sam',
+      heroFocus: 38, thumbFocus: 38,
+      platesFocus: [26, 26, 32, 46],
       when: 'Recent',
       blurb: 'A day built around the people in it, photographed as it actually happened.',
       story: [
@@ -169,6 +179,7 @@
     // ---- Events -------------------------------------------------------
     {
       cat: 'events', slug: 'igala-day', title: "Igala Day '26",
+      platesFocus: [35, 34, 25, 35, 28, 37, 27],
       when: 'Recent',
       blurb: "A cultural celebration, covered from the opening procession through the night's close.",
       story: [
@@ -178,6 +189,8 @@
     },
     {
       cat: 'events', slug: 'wedding-party', title: 'Wedding Party',
+      heroFocus: 41, thumbFocus: 41,
+      platesFocus: [null, 39, 23, 38],
       when: 'Recent',
       blurb: 'The reception in full swing, photographed as a celebration rather than a formality.',
       story: [
@@ -187,6 +200,8 @@
     },
     {
       cat: 'events', slug: 'worship-concert', title: 'Worship Concert',
+      heroFocus: 26, thumbFocus: 26,
+      platesFocus: [15, null, 15, 24, 11, null, 29, 34],
       when: 'Recent',
       blurb: 'A night of worship, photographed from the crowd and the stage alike.',
       story: [
@@ -198,6 +213,8 @@
     // ---- Church & Worship ---------------------------------------------
     {
       cat: 'church-worship', slug: 'sunday-worship', title: 'Sunday Worship',
+      heroFocus: 16, thumbFocus: 16,
+      platesFocus: [31, 42, 14, null, 29, 31, 36, null, null, null, 40],
       when: 'Recent',
       blurb: 'Services and ministry moments from across the year, photographed quietly from the back of the room.',
       story: [
@@ -209,6 +226,8 @@
     // ---- Lifestyle & Candid --------------------------------------------
     {
       cat: 'lifestyle-candid', slug: 'lifestyle-sessions', title: 'Lifestyle Sessions',
+      heroFocus: 26, thumbFocus: 26,
+      platesFocus: [42, 28, 22, 16, null, null, null, 29, null, 42, 33, 29],
       when: 'Recent',
       blurb: 'Unposed moments from everyday life, photographed as they happened.',
       story: [
@@ -220,6 +239,8 @@
     // ---- Portraits ------------------------------------------------------
     {
       cat: 'portraits', slug: 'portrait-sessions', title: 'Portrait Sessions',
+      heroFocus: 22, thumbFocus: 35,
+      platesFocus: [25, 29, 20, 27, 23, 26],
       when: 'Recent',
       blurb: 'Individual sessions from across the year, photographed with one light and no rush.',
       story: [
@@ -313,31 +334,47 @@
      lectern). Every hero/thumb/plate frame crops with object-fit:cover,
      which centres on the image by default — fine for a landscape shot,
      but it can crop straight through someone's face when the frame is
-     much shorter than the source photo. Where the manifest carries a
-     *Focus value (0-100, the vertical % to centre on) we use it instead
-     of the CSS default of 50%. */
+     much shorter than the source photo. Where a *Focus value (0-100, the
+     vertical % to centre on) is available we use it instead of the CSS
+     default of 50%.
+
+     These values live in two places and are merged, manifest first:
+     assets/data/images.json (editable from the CMS, so a photo swapped
+     in later can carry its own focus point) falling back to the
+     hard-coded PROJECTS/SHOOTS data below (so the fix still applies when
+     the manifest can't be fetched at all — notably over file://, where
+     browsers block fetch() of local JSON and the CMS is moot anyway
+     since there's no server to save back to). */
+  function firstNum() {
+    for (var i = 0; i < arguments.length; i++) {
+      if (typeof arguments[i] === 'number') return arguments[i];
+    }
+    return undefined;
+  }
   function posStyle(v) {
     return (typeof v === 'number') ? ' style="object-position:50% ' + v + '%"' : '';
   }
   function catHeroFocus(p) {
     var m = IMAGES.categories[p.slug];
-    return m && m.heroFocus;
+    return firstNum(m && m.heroFocus, p.heroFocus);
   }
   function catThumbFocus(p) {
     var m = IMAGES.categories[p.slug];
-    return m && m.thumbFocus;
+    return firstNum(m && m.thumbFocus, p.thumbFocus);
   }
   function shootHeroFocus(sh) {
     var m = IMAGES.shoots[sh.slug];
-    return m && m.heroFocus;
+    return firstNum(m && m.heroFocus, sh.heroFocus);
   }
   function shootThumbFocus(sh) {
     var m = IMAGES.shoots[sh.slug];
-    return m && m.thumbFocus;
+    return firstNum(m && m.thumbFocus, sh.thumbFocus);
   }
   function shootPlateFocus(sh, i) {
     var m = IMAGES.shoots[sh.slug];
-    return m && Array.isArray(m.platesFocus) ? m.platesFocus[i] : undefined;
+    var fromManifest = m && Array.isArray(m.platesFocus) ? m.platesFocus[i] : undefined;
+    var fromStatic = Array.isArray(sh.platesFocus) ? sh.platesFocus[i] : undefined;
+    return firstNum(fromManifest, fromStatic);
   }
 
   /* ---------------------------------------------------------------- chrome */
