@@ -11,20 +11,65 @@
     { "slug": "lifestyle-candid", "hero": "assets/img/lifestyle-candid-hero.jpg", "thumb": "assets/img/lifestyle-candid-thumb.jpg" }
   ],
   "shoots": [
-    { "slug": "marissa-cole", "hero": "assets/img/marissa-cole-hero.jpg", "thumb": "assets/img/marissa-cole-thumb.jpg", "plate1": "assets/img/marissa-cole-01.jpg", "plate2": "assets/img/marissa-cole-02.jpg", "plate3": "assets/img/marissa-cole-03.jpg", "plate4": "assets/img/marissa-cole-04.jpg" },
-    { "slug": "the-jewel-box", "hero": "assets/img/the-jewel-box-hero.jpg", "thumb": "assets/img/the-jewel-box-thumb.jpg", "plate1": "assets/img/the-jewel-box-01.jpg", "plate2": "assets/img/the-jewel-box-02.jpg", "plate3": "assets/img/the-jewel-box-03.jpg", "plate4": "assets/img/the-jewel-box-04.jpg" },
-    { "slug": "anaya-devon", "hero": "assets/img/anaya-devon-hero.jpg", "thumb": "assets/img/anaya-devon-thumb.jpg", "plate1": "assets/img/anaya-devon-01.jpg", "plate2": "assets/img/anaya-devon-02.jpg", "plate3": "assets/img/anaya-devon-03.jpg", "plate4": "assets/img/anaya-devon-04.jpg" },
-    { "slug": "night-shift", "hero": "assets/img/night-shift-hero.jpg", "thumb": "assets/img/night-shift-thumb.jpg", "plate1": "assets/img/night-shift-01.jpg", "plate2": "assets/img/night-shift-02.jpg", "plate3": "assets/img/night-shift-03.jpg", "plate4": "assets/img/night-shift-04.jpg" },
-    { "slug": "senior-2025", "hero": "assets/img/senior-2025-hero.jpg", "thumb": "assets/img/senior-2025-thumb.jpg", "plate1": "assets/img/senior-2025-01.jpg", "plate2": "assets/img/senior-2025-02.jpg", "plate3": "assets/img/senior-2025-03.jpg", "plate4": "assets/img/senior-2025-04.jpg" },
-    { "slug": "founders", "hero": "assets/img/founders-hero.jpg", "thumb": "assets/img/founders-thumb.jpg", "plate1": "assets/img/founders-01.jpg", "plate2": "assets/img/founders-02.jpg", "plate3": "assets/img/founders-03.jpg", "plate4": "assets/img/founders-04.jpg" },
-    { "slug": "gateway-summit", "hero": "assets/img/gateway-summit-hero.jpg", "thumb": "assets/img/gateway-summit-thumb.jpg", "plate1": "assets/img/gateway-summit-01.jpg", "plate2": "assets/img/gateway-summit-02.jpg", "plate3": "assets/img/gateway-summit-03.jpg", "plate4": "assets/img/gateway-summit-04.jpg" },
-    { "slug": "harvest-gala", "hero": "assets/img/harvest-gala-hero.jpg", "thumb": "assets/img/harvest-gala-thumb.jpg", "plate1": "assets/img/harvest-gala-01.jpg", "plate2": "assets/img/harvest-gala-02.jpg", "plate3": "assets/img/harvest-gala-03.jpg", "plate4": "assets/img/harvest-gala-04.jpg" },
-    { "slug": "launch-night", "hero": "assets/img/launch-night-hero.jpg", "thumb": "assets/img/launch-night-thumb.jpg", "plate1": "assets/img/launch-night-01.jpg", "plate2": "assets/img/launch-night-02.jpg", "plate3": "assets/img/launch-night-03.jpg", "plate4": "assets/img/launch-night-04.jpg" },
-    { "slug": "easter-sunday", "hero": "assets/img/easter-sunday-hero.jpg", "thumb": "assets/img/easter-sunday-thumb.jpg", "plate1": "assets/img/easter-sunday-01.jpg", "plate2": "assets/img/easter-sunday-02.jpg", "plate3": "assets/img/easter-sunday-03.jpg", "plate4": "assets/img/easter-sunday-04.jpg" },
-    { "slug": "river-baptism", "hero": "assets/img/river-baptism-hero.jpg", "thumb": "assets/img/river-baptism-thumb.jpg", "plate1": "assets/img/river-baptism-01.jpg", "plate2": "assets/img/river-baptism-02.jpg", "plate3": "assets/img/river-baptism-03.jpg", "plate4": "assets/img/river-baptism-04.jpg" },
-    { "slug": "choir-portraits", "hero": "assets/img/choir-portraits-hero.jpg", "thumb": "assets/img/choir-portraits-thumb.jpg", "plate1": "assets/img/choir-portraits-01.jpg", "plate2": "assets/img/choir-portraits-02.jpg", "plate3": "assets/img/choir-portraits-03.jpg", "plate4": "assets/img/choir-portraits-04.jpg" },
-    { "slug": "the-okonkwos", "hero": "assets/img/the-okonkwos-hero.jpg", "thumb": "assets/img/the-okonkwos-thumb.jpg", "plate1": "assets/img/the-okonkwos-01.jpg", "plate2": "assets/img/the-okonkwos-02.jpg", "plate3": "assets/img/the-okonkwos-03.jpg", "plate4": "assets/img/the-okonkwos-04.jpg" },
-    { "slug": "corner-bakery", "hero": "assets/img/corner-bakery-hero.jpg", "thumb": "assets/img/corner-bakery-thumb.jpg", "plate1": "assets/img/corner-bakery-01.jpg", "plate2": "assets/img/corner-bakery-02.jpg", "plate3": "assets/img/corner-bakery-03.jpg", "plate4": "assets/img/corner-bakery-04.jpg" },
-    { "slug": "saturday-market", "hero": "assets/img/saturday-market-hero.jpg", "thumb": "assets/img/saturday-market-thumb.jpg", "plate1": "assets/img/saturday-market-01.jpg", "plate2": "assets/img/saturday-market-02.jpg", "plate3": "assets/img/saturday-market-03.jpg", "plate4": "assets/img/saturday-market-04.jpg" }
+    {
+      "slug": "charis-emma",
+      "hero": "assets/img/charis-emma-hero.jpg",
+      "thumb": "assets/img/charis-emma-thumb.jpg",
+      "plates": ["assets/img/charis-emma-01.jpg", "assets/img/charis-emma-02.jpg", "assets/img/charis-emma-03.jpg"]
+    },
+    {
+      "slug": "praise-bolu",
+      "hero": "assets/img/praise-bolu-hero.jpg",
+      "thumb": "assets/img/praise-bolu-thumb.jpg",
+      "plates": ["assets/img/praise-bolu-01.jpg", "assets/img/praise-bolu-02.jpg", "assets/img/praise-bolu-03.jpg", "assets/img/praise-bolu-04.jpg", "assets/img/praise-bolu-05.jpg", "assets/img/praise-bolu-06.jpg"]
+    },
+    {
+      "slug": "taylor-ade",
+      "hero": "assets/img/taylor-ade-hero.jpg",
+      "thumb": "assets/img/taylor-ade-thumb.jpg",
+      "plates": ["assets/img/taylor-ade-01.jpg", "assets/img/taylor-ade-02.jpg", "assets/img/taylor-ade-03.jpg", "assets/img/taylor-ade-04.jpg", "assets/img/taylor-ade-05.jpg", "assets/img/taylor-ade-06.jpg", "assets/img/taylor-ade-07.jpg", "assets/img/taylor-ade-08.jpg", "assets/img/taylor-ade-09.jpg", "assets/img/taylor-ade-10.jpg"]
+    },
+    {
+      "slug": "tomi-sam",
+      "hero": "assets/img/tomi-sam-hero.jpg",
+      "thumb": "assets/img/tomi-sam-thumb.jpg",
+      "plates": ["assets/img/tomi-sam-01.jpg", "assets/img/tomi-sam-02.jpg", "assets/img/tomi-sam-03.jpg", "assets/img/tomi-sam-04.jpg"]
+    },
+    {
+      "slug": "igala-day",
+      "hero": "assets/img/igala-day-hero.jpg",
+      "thumb": "assets/img/igala-day-thumb.jpg",
+      "plates": ["assets/img/igala-day-01.jpg", "assets/img/igala-day-02.jpg", "assets/img/igala-day-03.jpg", "assets/img/igala-day-04.jpg", "assets/img/igala-day-05.jpg", "assets/img/igala-day-06.jpg", "assets/img/igala-day-07.jpg"]
+    },
+    {
+      "slug": "wedding-party",
+      "hero": "assets/img/wedding-party-hero.jpg",
+      "thumb": "assets/img/wedding-party-thumb.jpg",
+      "plates": ["assets/img/wedding-party-01.jpg", "assets/img/wedding-party-02.jpg", "assets/img/wedding-party-03.jpg", "assets/img/wedding-party-04.jpg"]
+    },
+    {
+      "slug": "worship-concert",
+      "hero": "assets/img/worship-concert-hero.jpg",
+      "thumb": "assets/img/worship-concert-thumb.jpg",
+      "plates": ["assets/img/worship-concert-01.jpg", "assets/img/worship-concert-02.jpg", "assets/img/worship-concert-03.jpg", "assets/img/worship-concert-04.jpg", "assets/img/worship-concert-05.jpg", "assets/img/worship-concert-06.jpg", "assets/img/worship-concert-07.jpg", "assets/img/worship-concert-08.jpg"]
+    },
+    {
+      "slug": "sunday-worship",
+      "hero": "assets/img/sunday-worship-hero.jpg",
+      "thumb": "assets/img/sunday-worship-thumb.jpg",
+      "plates": ["assets/img/sunday-worship-01.jpg", "assets/img/sunday-worship-02.jpg", "assets/img/sunday-worship-03.jpg", "assets/img/sunday-worship-04.jpg", "assets/img/sunday-worship-05.jpg", "assets/img/sunday-worship-06.jpg", "assets/img/sunday-worship-07.jpg", "assets/img/sunday-worship-08.jpg", "assets/img/sunday-worship-09.jpg", "assets/img/sunday-worship-10.jpg", "assets/img/sunday-worship-11.jpg"]
+    },
+    {
+      "slug": "lifestyle-sessions",
+      "hero": "assets/img/lifestyle-sessions-hero.jpg",
+      "thumb": "assets/img/lifestyle-sessions-thumb.jpg",
+      "plates": ["assets/img/lifestyle-sessions-01.jpg", "assets/img/lifestyle-sessions-02.jpg", "assets/img/lifestyle-sessions-03.jpg", "assets/img/lifestyle-sessions-04.jpg", "assets/img/lifestyle-sessions-05.jpg", "assets/img/lifestyle-sessions-06.jpg", "assets/img/lifestyle-sessions-07.jpg", "assets/img/lifestyle-sessions-08.jpg", "assets/img/lifestyle-sessions-09.jpg", "assets/img/lifestyle-sessions-10.jpg", "assets/img/lifestyle-sessions-11.jpg", "assets/img/lifestyle-sessions-12.jpg"]
+    },
+    {
+      "slug": "portrait-sessions",
+      "hero": "assets/img/portrait-sessions-hero.jpg",
+      "thumb": "assets/img/portrait-sessions-thumb.jpg",
+      "plates": ["assets/img/portrait-sessions-01.jpg", "assets/img/portrait-sessions-02.jpg", "assets/img/portrait-sessions-03.jpg", "assets/img/portrait-sessions-04.jpg", "assets/img/portrait-sessions-05.jpg", "assets/img/portrait-sessions-06.jpg"]
+    }
   ]
 }

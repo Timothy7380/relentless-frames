@@ -2,3 +2,10 @@
 .env
 .env.local
 node_modules/
+
+# Original client photo dumps (kept locally as backups, not tracked in git)
+/Church Worship/
+/Events/
+/Lifestyle/
+/Portraits/
+/Wedding/

@@ -11,9 +11,9 @@
 
 backend:
   name: github
-  repo: Timothy7380/relentless-frames   # <-- fill in
+  repo: Timothy7380/relentless-frames
   branch: main
-  base_url: https://rf-cms-auth.timmyberry738.workers.dev   # <-- fill in
+  base_url: https://rf-cms-auth.timmyberry738.workers.dev
   auth_endpoint: auth
 
 # Photos the owner uploads are written straight into assets/img/, the same
@@ -55,7 +55,7 @@ collections:
               - { label: "Shoot (do not edit)", name: "slug", widget: hidden }
               - { label: "Hero photo (shoot page header)", name: "hero", widget: image }
               - { label: "Thumbnail (category listing card)", name: "thumb", widget: image }
-              - { label: "Gallery photo 1", name: "plate1", widget: image }
-              - { label: "Gallery photo 2", name: "plate2", widget: image }
-              - { label: "Gallery photo 3", name: "plate3", widget: image }
-              - { label: "Gallery photo 4", name: "plate4", widget: image }
+              - label: "Gallery photos"
+                name: "plates"
+                widget: list
+                field: { label: "Photo", name: "plate", widget: image }

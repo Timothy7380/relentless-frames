@@ -124,167 +124,108 @@
     ['04', 'Edit & hand-off', 'A tight selection, graded consistently, delivered in web and print resolutions with a licence written in plain English. Full unedited takes are archived for five years.']
   ];
 
-  // Individual shoots, three to a category. `slug` must match the image
-  // filenames in assets/img/. `cat` points at a PROJECTS slug.
+  // Individual shoots. `slug` matches an entry in assets/data/images.json
+  // (falls back to filenames in assets/img/ if the manifest is missing).
+  // `cat` points at a PROJECTS slug.
   var SHOOTS = [
     // ---- Wedding ------------------------------------------------------
     {
-      cat: 'wedding', slug: 'marissa-cole', title: 'Marissa & Cole',
-      when: 'October 2025',
-      blurb: 'A November-cold October, and a ceremony that moved indoors an hour before it started.',
+      cat: 'wedding', slug: 'charis-emma', title: 'Charis & Emma',
+      when: 'Recent',
+      blurb: 'A full day of celebration, from quiet morning moments to the last dance.',
       story: [
-        'The forecast turned on the Thursday. By Saturday morning the garden was unusable, and the whole ceremony was rebuilt inside a room designed for about half as many people.',
-        'What that gave us was a very tight, very warm room lit almost entirely by lamps. Nobody could stand more than a few feet from anyone else, which is why almost every frame that ran has three or four people in it.'
+        'Covered the way every wedding here is — quietly, in available light, staying through to the moments most coverage misses.'
       ],
-      facts: { Date: 'October 2025', Coverage: '11 hours, two photographers', Delivered: '740 edited frames', Light: 'Available light throughout' }
+      facts: { Note: 'Full gallery available on request' }
     },
     {
-      cat: 'wedding', slug: 'the-jewel-box', title: 'The Jewel Box',
-      when: 'June 2025',
-      blurb: 'A glasshouse at four in the afternoon, which is the worst possible hour and the best possible light.',
+      cat: 'wedding', slug: 'praise-bolu', title: 'Praise & Bolu',
+      when: 'Recent',
+      blurb: 'Two families, one day, and a celebration carried through every hour of it.',
       story: [
-        'Photographing inside a glasshouse in June means contending with light coming from every direction at once, most of it far too strong. The usual answer is to wait. We did not have that option.',
-        'So we worked the hard light instead of fighting it — hard shadows on the stone floor, the frame structure throwing lines across everything. It is the most graphic set we shot all year.'
+        'Covered the way every wedding here is — quietly, in available light, staying through to the moments most coverage misses.'
       ],
-      facts: { Date: 'June 2025', Coverage: '9 hours', Delivered: '620 edited frames', Note: 'Ceremony and portraits on site' }
+      facts: { Note: 'Full gallery available on request' }
     },
     {
-      cat: 'wedding', slug: 'anaya-devon', title: 'Anaya & Devon',
-      when: 'September 2024',
-      blurb: 'Two ceremonies in one day, forty minutes apart, in two different buildings.',
+      cat: 'wedding', slug: 'taylor-ade', title: 'Taylor & Ade',
+      when: 'Recent',
+      blurb: 'A wedding day worked in full, from the getting-ready hours through the reception.',
       story: [
-        'A traditional ceremony in the morning and a civil one after lunch, with a change of clothes and a drive between them. The schedule had no slack in it anywhere.',
-        'We split up: one of us stayed with the family through the transition, the other went ahead to the second venue. It is the only way that day gets covered properly, and it is why we quote two photographers for anything like it.'
+        'Covered the way every wedding here is — quietly, in available light, staying through to the moments most coverage misses.'
       ],
-      facts: { Date: 'September 2024', Coverage: '13 hours, two photographers', Delivered: '910 edited frames', Note: 'Two ceremonies, one day' }
-    },
-
-    // ---- Portraits ----------------------------------------------------
-    {
-      cat: 'portraits', slug: 'night-shift', title: 'Night Shift',
-      when: '2024–2025',
-      blurb: 'Nine people who work nights, photographed within an hour of finishing.',
-      story: [
-        'A personal series shot over four months: a baker, two nurses, a bus driver, a security guard, a line cook and three others. One light, no retouching beyond dust.',
-        'Every sitting happened at the end of a shift, which is the whole point. Tiredness does something to a face that no amount of direction can reproduce.'
-      ],
-      facts: { Series: 'Personal work', Period: '2024–2025', Sitters: 'Nine', Delivered: '9 final frames from 400', Exhibited: 'St. Louis, 2025' }
+      facts: { Note: 'Full gallery available on request' }
     },
     {
-      cat: 'portraits', slug: 'senior-2025', title: 'Senior Sessions',
-      when: 'Spring 2025',
-      blurb: 'Eighteen-year-olds, photographed somewhere that actually means something to them.',
+      cat: 'wedding', slug: 'tomi-sam', title: 'Tomi & Sam',
+      when: 'Recent',
+      blurb: 'A day built around the people in it, photographed as it actually happened.',
       story: [
-        'We stopped offering a studio backdrop for these. Every session now happens somewhere the person chose — a practice room, a driveway, a stretch of the Riverfront Trail.',
-        'It takes longer and the light is harder to control. It also means the pictures look like a specific person in a specific year rather than a template.'
+        'Covered the way every wedding here is — quietly, in available light, staying through to the moments most coverage misses.'
       ],
-      facts: { Sessions: 'Twenty-two', Period: 'Spring 2025', Length: '90 minutes each', Delivered: '35–45 frames per sitter' }
-    },
-    {
-      cat: 'portraits', slug: 'founders', title: 'Founders',
-      when: 'February 2025',
-      blurb: 'Fourteen headshots in one day, in an office with no windows worth using.',
-      story: [
-        'A company portrait day with a hard four-hour window and a boardroom that faced a parking structure. We built a single soft source in the corner and kept it there.',
-        'The brief asked for consistency across the set so they could sit together on one page. Same light, same distance, same lens — the only variable left is the person.'
-      ],
-      facts: { Client: 'Cortex District company', Date: 'February 2025', Sitters: 'Fourteen', Delivered: '3 selects each', Turnaround: 'Six working days' }
+      facts: { Note: 'Full gallery available on request' }
     },
 
     // ---- Events -------------------------------------------------------
     {
-      cat: 'events', slug: 'gateway-summit', title: 'Gateway Summit',
-      when: 'March 2025',
-      blurb: 'Two days, six rooms running at once, and a same-night delivery for press.',
+      cat: 'events', slug: 'igala-day', title: "Igala Day '26",
+      when: 'Recent',
+      blurb: "A cultural celebration, covered from the opening procession through the night's close.",
       story: [
-        'A conference with parallel tracks means constant triage — you cannot be in six rooms, so you decide in advance which twenty minutes of each hour actually matter.',
-        'Selects went out at midnight on both nights for the press desk. The full gallery followed two weeks later.'
+        'Documented as it unfolded — the ceremony, the dancing, the details that made the day.'
       ],
-      facts: { Client: 'Gateway Summit', Date: 'March 2025', Coverage: 'Two days', Delivered: '480 edited, 60 same-night' }
+      facts: { Note: 'Full gallery available on request' }
     },
     {
-      cat: 'events', slug: 'harvest-gala', title: 'Harvest Gala',
-      when: 'October 2024',
-      blurb: 'A black-tie fundraiser lit almost entirely by candles and uplighting.',
+      cat: 'events', slug: 'wedding-party', title: 'Wedding Party',
+      when: 'Recent',
+      blurb: 'The reception in full swing, photographed as a celebration rather than a formality.',
       story: [
-        'Fundraisers have two jobs for a photographer: document the people who need documenting, and make the room look like somewhere worth giving money to.',
-        'The room did most of the second job itself. We shot wide open all night and kept the flash in the bag except for the formal donor pictures.'
+        'Covered quietly from inside the room, the way any celebration deserves to be documented.'
       ],
-      facts: { Client: 'Private foundation', Date: 'October 2024', Coverage: '6 hours', Delivered: '340 edited frames' }
+      facts: { Note: 'Full gallery available on request' }
     },
     {
-      cat: 'events', slug: 'launch-night', title: 'Launch Night',
-      when: 'August 2024',
-      blurb: 'A product launch that spilled out of the shop and onto the sidewalk by eight.',
+      cat: 'events', slug: 'worship-concert', title: 'Worship Concert',
+      when: 'Recent',
+      blurb: 'A night of worship, photographed from the crowd and the stage alike.',
       story: [
-        'Planned for forty people, attended by closer to two hundred. Within an hour the actual event was happening outside, under a streetlight and a string of bulbs.',
-        'The client got the clean interior frames they had briefed. They also got the crowd on the pavement, which is what ended up on every channel they run.'
+        'Low light, a moving crowd, and a set covered without a single staged frame.'
       ],
-      facts: { Client: 'Cherokee Street retailer', Date: 'August 2024', Coverage: '4 hours', Delivered: '210 edited frames', Licensing: 'Full commercial use' }
+      facts: { Note: 'Full gallery available on request' }
     },
 
     // ---- Church & Worship ---------------------------------------------
     {
-      cat: 'church-worship', slug: 'easter-sunday', title: 'Easter Sunday',
-      when: 'March 2025',
-      blurb: 'Three services back to back, photographed without a single shutter anyone could hear.',
+      cat: 'church-worship', slug: 'sunday-worship', title: 'Sunday Worship',
+      when: 'Recent',
+      blurb: 'Services and ministry moments from across the year, photographed quietly from the back of the room.',
       story: [
-        'Easter is the one Sunday where a congregation doubles and every seat is taken. It is also the Sunday where a loud camera is least welcome.',
-        'Silent shutter, a long lens, and the back of the balcony for the whole of each service. We moved down for the baptisms afterwards, once the room had relaxed.'
+        'A running collection of Sunday coverage — worship, baptisms, and the everyday life of the congregation.'
       ],
-      facts: { Congregation: 'Grace Fellowship', Date: 'March 2025', Coverage: 'Three services', Delivered: '280 edited frames', Method: 'Silent shutter, no flash' }
-    },
-    {
-      cat: 'church-worship', slug: 'river-baptism', title: 'River Baptism',
-      when: 'July 2024',
-      blurb: 'Nineteen baptisms in open water, on an overcast morning that held just long enough.',
-      story: [
-        'Outdoor baptisms give you flat light, an uncontrolled background and no second take. We scouted the bank two days before to work out where to stand.',
-        'One of us was in the water in waders for the whole two hours. That is the only position from which the faces are readable.'
-      ],
-      facts: { Congregation: 'Grace Fellowship', Date: 'July 2024', Baptisms: 'Nineteen', Delivered: '160 edited frames' }
-    },
-    {
-      cat: 'church-worship', slug: 'choir-portraits', title: 'Choir Portraits',
-      when: 'November 2024',
-      blurb: 'Forty-one singers, individually and together, in ninety minutes between rehearsals.',
-      story: [
-        'An image library for a church website and print programme: one group frame, plus a usable individual portrait of every member of the choir.',
-        'Ninety minutes for forty-one people means just over two minutes each. We set one light in the narthex and ran it like a production line, which sounds unromantic and produced a genuinely good set.'
-      ],
-      facts: { Congregation: 'Second Baptist', Date: 'November 2024', Sitters: 'Forty-one', Delivered: 'Group set plus 41 portraits', Turnaround: 'One week' }
+      facts: { Note: 'Full gallery available on request' }
     },
 
     // ---- Lifestyle & Candid --------------------------------------------
     {
-      cat: 'lifestyle-candid', slug: 'the-okonkwos', title: 'The Okonkwos',
-      when: 'May 2025',
-      blurb: 'A Saturday morning at home with three children under seven and no plan whatsoever.',
+      cat: 'lifestyle-candid', slug: 'lifestyle-sessions', title: 'Lifestyle Sessions',
+      when: 'Recent',
+      blurb: 'Unposed moments from everyday life, photographed as they happened.',
       story: [
-        'The brief was "we want to remember what the house felt like this year." No outfits, no location, no posing — just the two hours after breakfast.',
-        'We stayed out of the way and let the morning happen. The frames the family printed were the kitchen, the stairs, and one of the youngest asleep on the dog.'
+        'A collection of candid sessions — families, routines, and ordinary afternoons, photographed without posing.'
       ],
-      facts: { Family: 'Private commission', Date: 'May 2025', Length: '2 hours', Delivered: '85 edited frames' }
+      facts: { Note: 'Full gallery available on request' }
     },
+
+    // ---- Portraits ------------------------------------------------------
     {
-      cat: 'lifestyle-candid', slug: 'corner-bakery', title: 'Corner Bakery',
-      when: 'January 2025',
-      blurb: 'A 4 a.m. start with the bakers, finishing as the first customers came through the door.',
+      cat: 'portraits', slug: 'portrait-sessions', title: 'Portrait Sessions',
+      when: 'Recent',
+      blurb: 'Individual sessions from across the year, photographed with one light and no rush.',
       story: [
-        'Brand photography for a bakery that wanted to show the work rather than the pastry. That meant starting when they start, which is the middle of the night.',
-        'Four hours in a hot room lit by one fluorescent strip and the oven. We shot it as reportage and the resulting set now runs across their site, their packaging and their windows.'
+        'A running collection of portrait sittings — headshots, personal sessions, and the occasional favor for a friend.'
       ],
-      facts: { Client: 'Benton Park bakery', Date: 'January 2025', Coverage: '4 hours from 4 a.m.', Delivered: '120 edited frames', Licensing: 'Full commercial use' }
-    },
-    {
-      cat: 'lifestyle-candid', slug: 'saturday-market', title: 'Saturday Market',
-      when: 'Ongoing',
-      blurb: 'An open-ended personal series, one Saturday a month, same market, same hour.',
-      story: [
-        'Started as a way to keep shooting between commissions. Now it is fourteen months of the same market photographed at the same time of day.',
-        'The point of returning is that you stop noticing the obvious things. Everything in the current edit was made after the fifth visit.'
-      ],
-      facts: { Series: 'Personal work', Period: 'Ongoing since 2024', Cadence: 'One Saturday a month', Delivered: 'Rolling edit' }
+      facts: { Note: 'Full gallery available on request' }
     }
   ];
 
@@ -351,10 +292,15 @@
   }
   function shootPlates(sh) {
     var m = IMAGES.shoots[sh.slug];
-    return ['01', '02', '03', '04'].map(function (n, i) {
-      var key = 'plate' + (i + 1);
-      return (m && m[key]) || (IMG + sh.slug + '-' + n + '.jpg');
-    });
+    if (m && Array.isArray(m.plates) && m.plates.length) return m.plates;
+    if (m) {
+      // Back-compat with the older fixed plate1..plate4 manifest shape.
+      var fixed = ['plate1', 'plate2', 'plate3', 'plate4']
+        .map(function (key) { return m[key]; })
+        .filter(Boolean);
+      if (fixed.length) return fixed;
+    }
+    return ['01', '02', '03', '04'].map(function (n) { return IMG + sh.slug + '-' + n + '.jpg'; });
   }
   function studioImg(n) {
     var m = IMAGES.studio;
@@ -711,7 +657,8 @@
                 '<button class="gallery-arrow next" type="button" aria-label="Next image">' +
                   '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
                 '</button>' +
-                '<span class="gallery-count"><span id="galleryNum">01</span> / 0' + plates.length + '</span>' +
+                '<span class="gallery-count"><span id="galleryNum">01</span> / ' +
+                  (plates.length < 10 ? '0' : '') + plates.length + '</span>' +
               '</div>' +
               '<div class="gallery-thumbs">' +
                 plates.map(function (src, k) {
