@@ -187,6 +187,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .drawer.is-open .drawer-links a:nth-child(4){transition-delay:.34s}
 .drawer.is-open .drawer-links a:nth-child(5){transition-delay:.40s}
 .drawer-links a:hover{color:var(--ink-50)}
+@media (max-width:720px){
+  .drawer-links a{font-size:clamp(48px,15vw,64px);padding:9px 0}
+  .drawer-links{gap:0}
+}
 .drawer-foot{
   position:absolute;left:var(--gut);right:var(--gut);bottom:32px;
   display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;

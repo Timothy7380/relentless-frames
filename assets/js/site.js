@@ -345,7 +345,12 @@
   function studioImg(n) {
     var m = IMAGES.studio;
     var key = 'photo' + n;
-    return (m && m[key]) || (IMG + 'studio-0' + n + '.jpg');
+    // studio-01/02.jpg were blank placeholder art. Until real behind-the-
+    // scenes studio photos are supplied, these two faceless detail shots
+    // (a ring exchange, a reception table) stand in as fallback so the
+    // About page never shows an empty grey block.
+    var fallback = n === 1 ? 'taylor-ade-09.jpg' : 'taylor-ade-04.jpg';
+    return (m && m[key]) || (IMG + fallback);
   }
 
   /* Some source photos put the subject's face well above the vertical
