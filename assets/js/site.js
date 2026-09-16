@@ -112,8 +112,7 @@
         'Session length': '2 hours',
         'Delivered': '60–100 edited frames',
         'Turnaround': 'Ten working days',
-        'Best time': 'The two hours before sunset',
-        'Location': 'Your home, or anywhere in the city'
+        'Best time': 'The two hours before sunset'
       }
     }
   ];
@@ -131,39 +130,39 @@
     // ---- Wedding ------------------------------------------------------
     {
       cat: 'wedding', slug: 'marissa-cole', title: 'Marissa & Cole',
-      venue: 'Lemp Mansion', when: 'October 2025',
+      when: 'October 2025',
       blurb: 'A November-cold October, and a ceremony that moved indoors an hour before it started.',
       story: [
         'The forecast turned on the Thursday. By Saturday morning the garden was unusable, and the whole ceremony was rebuilt inside a room designed for about half as many people.',
         'What that gave us was a very tight, very warm room lit almost entirely by lamps. Nobody could stand more than a few feet from anyone else, which is why almost every frame that ran has three or four people in it.'
       ],
-      facts: { Venue: 'Lemp Mansion, St. Louis', Date: 'October 2025', Coverage: '11 hours, two photographers', Delivered: '740 edited frames', Light: 'Available light throughout' }
+      facts: { Date: 'October 2025', Coverage: '11 hours, two photographers', Delivered: '740 edited frames', Light: 'Available light throughout' }
     },
     {
       cat: 'wedding', slug: 'the-jewel-box', title: 'The Jewel Box',
-      venue: 'Forest Park', when: 'June 2025',
+      when: 'June 2025',
       blurb: 'A glasshouse at four in the afternoon, which is the worst possible hour and the best possible light.',
       story: [
         'Photographing inside a glasshouse in June means contending with light coming from every direction at once, most of it far too strong. The usual answer is to wait. We did not have that option.',
         'So we worked the hard light instead of fighting it — hard shadows on the stone floor, the frame structure throwing lines across everything. It is the most graphic set we shot all year.'
       ],
-      facts: { Venue: 'The Jewel Box, Forest Park', Date: 'June 2025', Coverage: '9 hours', Delivered: '620 edited frames', Note: 'Ceremony and portraits on site' }
+      facts: { Date: 'June 2025', Coverage: '9 hours', Delivered: '620 edited frames', Note: 'Ceremony and portraits on site' }
     },
     {
       cat: 'wedding', slug: 'anaya-devon', title: 'Anaya & Devon',
-      venue: 'Old North', when: 'September 2024',
+      when: 'September 2024',
       blurb: 'Two ceremonies in one day, forty minutes apart, in two different buildings.',
       story: [
         'A traditional ceremony in the morning and a civil one after lunch, with a change of clothes and a drive between them. The schedule had no slack in it anywhere.',
         'We split up: one of us stayed with the family through the transition, the other went ahead to the second venue. It is the only way that day gets covered properly, and it is why we quote two photographers for anything like it.'
       ],
-      facts: { Venue: 'Old North, St. Louis', Date: 'September 2024', Coverage: '13 hours, two photographers', Delivered: '910 edited frames', Note: 'Two ceremonies, one day' }
+      facts: { Date: 'September 2024', Coverage: '13 hours, two photographers', Delivered: '910 edited frames', Note: 'Two ceremonies, one day' }
     },
 
     // ---- Portraits ----------------------------------------------------
     {
       cat: 'portraits', slug: 'night-shift', title: 'Night Shift',
-      venue: 'Personal work', when: '2024–2025',
+      when: '2024–2025',
       blurb: 'Nine people who work nights, photographed within an hour of finishing.',
       story: [
         'A personal series shot over four months: a baker, two nurses, a bus driver, a security guard, a line cook and three others. One light, no retouching beyond dust.',
@@ -173,17 +172,17 @@
     },
     {
       cat: 'portraits', slug: 'senior-2025', title: 'Senior Sessions',
-      venue: 'Across the city', when: 'Spring 2025',
+      when: 'Spring 2025',
       blurb: 'Eighteen-year-olds, photographed somewhere that actually means something to them.',
       story: [
         'We stopped offering a studio backdrop for these. Every session now happens somewhere the person chose — a practice room, a driveway, a stretch of the Riverfront Trail.',
         'It takes longer and the light is harder to control. It also means the pictures look like a specific person in a specific year rather than a template.'
       ],
-      facts: { Sessions: 'Twenty-two', Period: 'Spring 2025', Length: '90 minutes each', Delivered: '35–45 frames per sitter', Location: "The subject's choice" }
+      facts: { Sessions: 'Twenty-two', Period: 'Spring 2025', Length: '90 minutes each', Delivered: '35–45 frames per sitter' }
     },
     {
       cat: 'portraits', slug: 'founders', title: 'Founders',
-      venue: 'Cortex District', when: 'February 2025',
+      when: 'February 2025',
       blurb: 'Fourteen headshots in one day, in an office with no windows worth using.',
       story: [
         'A company portrait day with a hard four-hour window and a boardroom that faced a parking structure. We built a single soft source in the corner and kept it there.',
@@ -195,27 +194,27 @@
     // ---- Events -------------------------------------------------------
     {
       cat: 'events', slug: 'gateway-summit', title: 'Gateway Summit',
-      venue: "America's Center", when: 'March 2025',
+      when: 'March 2025',
       blurb: 'Two days, six rooms running at once, and a same-night delivery for press.',
       story: [
         'A conference with parallel tracks means constant triage — you cannot be in six rooms, so you decide in advance which twenty minutes of each hour actually matter.',
         'Selects went out at midnight on both nights for the press desk. The full gallery followed two weeks later.'
       ],
-      facts: { Client: 'Gateway Summit', Venue: "America's Center", Date: 'March 2025', Coverage: 'Two days', Delivered: '480 edited, 60 same-night' }
+      facts: { Client: 'Gateway Summit', Date: 'March 2025', Coverage: 'Two days', Delivered: '480 edited, 60 same-night' }
     },
     {
       cat: 'events', slug: 'harvest-gala', title: 'Harvest Gala',
-      venue: 'Missouri Botanical Garden', when: 'October 2024',
+      when: 'October 2024',
       blurb: 'A black-tie fundraiser lit almost entirely by candles and uplighting.',
       story: [
         'Fundraisers have two jobs for a photographer: document the people who need documenting, and make the room look like somewhere worth giving money to.',
         'The room did most of the second job itself. We shot wide open all night and kept the flash in the bag except for the formal donor pictures.'
       ],
-      facts: { Client: 'Private foundation', Venue: 'Missouri Botanical Garden', Date: 'October 2024', Coverage: '6 hours', Delivered: '340 edited frames' }
+      facts: { Client: 'Private foundation', Date: 'October 2024', Coverage: '6 hours', Delivered: '340 edited frames' }
     },
     {
       cat: 'events', slug: 'launch-night', title: 'Launch Night',
-      venue: 'Cherokee Street', when: 'August 2024',
+      when: 'August 2024',
       blurb: 'A product launch that spilled out of the shop and onto the sidewalk by eight.',
       story: [
         'Planned for forty people, attended by closer to two hundred. Within an hour the actual event was happening outside, under a streetlight and a string of bulbs.',
@@ -227,7 +226,7 @@
     // ---- Church & Worship ---------------------------------------------
     {
       cat: 'church-worship', slug: 'easter-sunday', title: 'Easter Sunday',
-      venue: 'Grace Fellowship', when: 'March 2025',
+      when: 'March 2025',
       blurb: 'Three services back to back, photographed without a single shutter anyone could hear.',
       story: [
         'Easter is the one Sunday where a congregation doubles and every seat is taken. It is also the Sunday where a loud camera is least welcome.',
@@ -237,17 +236,17 @@
     },
     {
       cat: 'church-worship', slug: 'river-baptism', title: 'River Baptism',
-      venue: 'Meramec River', when: 'July 2024',
+      when: 'July 2024',
       blurb: 'Nineteen baptisms in open water, on an overcast morning that held just long enough.',
       story: [
         'Outdoor baptisms give you flat light, an uncontrolled background and no second take. We scouted the bank two days before to work out where to stand.',
         'One of us was in the water in waders for the whole two hours. That is the only position from which the faces are readable.'
       ],
-      facts: { Congregation: 'Grace Fellowship', Venue: 'Meramec River', Date: 'July 2024', Baptisms: 'Nineteen', Delivered: '160 edited frames' }
+      facts: { Congregation: 'Grace Fellowship', Date: 'July 2024', Baptisms: 'Nineteen', Delivered: '160 edited frames' }
     },
     {
       cat: 'church-worship', slug: 'choir-portraits', title: 'Choir Portraits',
-      venue: 'Second Baptist', when: 'November 2024',
+      when: 'November 2024',
       blurb: 'Forty-one singers, individually and together, in ninety minutes between rehearsals.',
       story: [
         'An image library for a church website and print programme: one group frame, plus a usable individual portrait of every member of the choir.',
@@ -259,17 +258,17 @@
     // ---- Lifestyle & Candid --------------------------------------------
     {
       cat: 'lifestyle-candid', slug: 'the-okonkwos', title: 'The Okonkwos',
-      venue: 'At home, Shaw', when: 'May 2025',
+      when: 'May 2025',
       blurb: 'A Saturday morning at home with three children under seven and no plan whatsoever.',
       story: [
         'The brief was "we want to remember what the house felt like this year." No outfits, no location, no posing — just the two hours after breakfast.',
         'We stayed out of the way and let the morning happen. The frames the family printed were the kitchen, the stairs, and one of the youngest asleep on the dog.'
       ],
-      facts: { Family: 'Private commission', Location: 'Shaw, St. Louis', Date: 'May 2025', Length: '2 hours', Delivered: '85 edited frames' }
+      facts: { Family: 'Private commission', Date: 'May 2025', Length: '2 hours', Delivered: '85 edited frames' }
     },
     {
       cat: 'lifestyle-candid', slug: 'corner-bakery', title: 'Corner Bakery',
-      venue: 'Benton Park', when: 'January 2025',
+      when: 'January 2025',
       blurb: 'A 4 a.m. start with the bakers, finishing as the first customers came through the door.',
       story: [
         'Brand photography for a bakery that wanted to show the work rather than the pastry. That meant starting when they start, which is the middle of the night.',
@@ -279,13 +278,13 @@
     },
     {
       cat: 'lifestyle-candid', slug: 'saturday-market', title: 'Saturday Market',
-      venue: 'Soulard', when: 'Ongoing',
+      when: 'Ongoing',
       blurb: 'An open-ended personal series, one Saturday a month, same market, same hour.',
       story: [
         'Started as a way to keep shooting between commissions. Now it is fourteen months of the same market photographed at the same time of day.',
         'The point of returning is that you stop noticing the obvious things. Everything in the current edit was made after the fifth visit.'
       ],
-      facts: { Series: 'Personal work', Location: 'Soulard Farmers Market', Period: 'Ongoing since 2024', Cadence: 'One Saturday a month', Delivered: 'Rolling edit' }
+      facts: { Series: 'Personal work', Period: 'Ongoing since 2024', Cadence: 'One Saturday a month', Delivered: 'Rolling edit' }
     }
   ];
 
@@ -448,7 +447,7 @@
       var c = bySlug(sh.cat);
       return { href: '#/work/' + sh.cat + '/' + sh.slug, title: sh.title,
                sub: (c ? c.title : '') + ' · ' + sh.when,
-               hay: sh.title + ' ' + sh.venue + ' ' + sh.when + ' ' + sh.blurb + ' ' + (c ? c.title : '') };
+               hay: sh.title + ' ' + sh.when + ' ' + sh.blurb + ' ' + (c ? c.title : '') };
     }));
     var hits = pool.filter(function (x) {
       return !term || x.hay.toLowerCase().indexOf(term) > -1;
@@ -576,7 +575,7 @@
               '<div class="card-frame"><img src="' + shootThumb(sh) + '" alt="' + esc(sh.title) + '" loading="lazy"></div>' +
               '<div class="card-meta">' +
                 '<span class="t">' + esc(sh.title) + '</span>' +
-                '<span class="m">' + esc(cat ? cat.title : '') + ' · ' + esc(sh.when) + '<br>' + esc(sh.venue) + '</span>' +
+                '<span class="m">' + esc(cat ? cat.title : '') + ' · ' + esc(sh.when) + '</span>' +
               '</div>' +
             '</a>';
           }).join('') +
@@ -635,7 +634,7 @@
                   '<div class="shoot-info">' +
                     '<h3 class="shoot-title">' + esc(sh.title) + '</h3>' +
                     '<p class="shoot-blurb">' + esc(sh.blurb) + '</p>' +
-                    '<span class="shoot-meta">' + esc(sh.venue) + ' · ' + esc(sh.when) + '</span>' +
+                    '<span class="shoot-meta">' + esc(sh.when) + '</span>' +
                   '</div>' +
                 '</a>';
               }).join('') +
@@ -680,7 +679,7 @@
             '<div class="rail-inner">' +
               '<span class="rail-mark" aria-hidden="true">' + markSvg() + '</span>' +
               '<h1 class="rail-title">' + esc(sh.title) + '</h1>' +
-              '<span class="kicker rail-kicker">' + esc(sh.venue) + ' · ' + esc(sh.when) + '</span>' +
+              '<span class="kicker rail-kicker">' + esc(sh.when) + '</span>' +
               '<dl class="rail-meta">' +
                 Object.keys(sh.facts).map(function (k) {
                   return '<div><dt>' + esc(k) + '</dt><dd>' + esc(sh.facts[k]) + '</dd></div>';
