@@ -134,6 +134,7 @@
     // ---- Wedding ------------------------------------------------------
     {
       cat: 'wedding', slug: 'charis-emma', title: 'Charis & Emma',
+      plateCount: 3,
       platesFocus: [null, 25, 40],
       when: 'Recent',
       blurb: 'A full day of celebration, from quiet morning moments to the last dance.',
@@ -144,6 +145,7 @@
     },
     {
       cat: 'wedding', slug: 'praise-bolu', title: 'Praise & Bolu',
+      plateCount: 6,
       heroFocus: 11, thumbFocus: 11,
       platesFocus: [null, 39, 36, null, 40, null],
       when: 'Recent',
@@ -155,6 +157,7 @@
     },
     {
       cat: 'wedding', slug: 'taylor-ade', title: 'Taylor & Ade',
+      plateCount: 10,
       heroFocus: 28, thumbFocus: 28,
       platesFocus: [43, null, 26, null, 24, 11, 39, 9, null, null],
       when: 'Recent',
@@ -166,6 +169,7 @@
     },
     {
       cat: 'wedding', slug: 'tomi-sam', title: 'Tomi & Sam',
+      plateCount: 4,
       heroFocus: 38, thumbFocus: 38,
       platesFocus: [26, 26, 32, 46],
       when: 'Recent',
@@ -179,6 +183,7 @@
     // ---- Events -------------------------------------------------------
     {
       cat: 'events', slug: 'igala-day', title: "Igala Day '26",
+      plateCount: 7,
       platesFocus: [35, 34, 25, 35, 28, 37, 27],
       when: 'Recent',
       blurb: "A cultural celebration, covered from the opening procession through the night's close.",
@@ -189,6 +194,7 @@
     },
     {
       cat: 'events', slug: 'wedding-party', title: 'Wedding Party',
+      plateCount: 4,
       heroFocus: 41, thumbFocus: 41,
       platesFocus: [null, 39, 23, 38],
       when: 'Recent',
@@ -200,6 +206,7 @@
     },
     {
       cat: 'events', slug: 'worship-concert', title: 'Worship Concert',
+      plateCount: 8,
       heroFocus: 26, thumbFocus: 26,
       platesFocus: [15, null, 15, 24, 11, null, 29, 34],
       when: 'Recent',
@@ -213,6 +220,7 @@
     // ---- Church & Worship ---------------------------------------------
     {
       cat: 'church-worship', slug: 'sunday-worship', title: 'Sunday Worship',
+      plateCount: 11,
       heroFocus: 16, thumbFocus: 16,
       platesFocus: [31, 42, 14, null, 29, 31, 36, null, null, null, 40],
       when: 'Recent',
@@ -226,6 +234,7 @@
     // ---- Lifestyle & Candid --------------------------------------------
     {
       cat: 'lifestyle-candid', slug: 'lifestyle-sessions', title: 'Lifestyle Sessions',
+      plateCount: 12,
       heroFocus: 26, thumbFocus: 26,
       platesFocus: [42, 28, 22, 16, null, null, null, 29, null, 42, 33, 29],
       when: 'Recent',
@@ -239,6 +248,7 @@
     // ---- Portraits ------------------------------------------------------
     {
       cat: 'portraits', slug: 'portrait-sessions', title: 'Portrait Sessions',
+      plateCount: 6,
       heroFocus: 22, thumbFocus: 35,
       platesFocus: [25, 29, 20, 27, 23, 26],
       when: 'Recent',
@@ -321,7 +331,16 @@
         .filter(Boolean);
       if (fixed.length) return fixed;
     }
-    return ['01', '02', '03', '04'].map(function (n) { return IMG + sh.slug + '-' + n + '.jpg'; });
+    // Manifest unreachable (e.g. opened via file://, where fetch() of a
+    // local JSON file is blocked) — fall back to the naming convention,
+    // using each shoot's own photo count rather than assuming four, since
+    // real shoots here range from 3 to 12 gallery photos.
+    var count = sh.plateCount || 4;
+    var out = [];
+    for (var i = 1; i <= count; i++) {
+      out.push(IMG + sh.slug + '-' + (i < 10 ? '0' : '') + i + '.jpg');
+    }
+    return out;
   }
   function studioImg(n) {
     var m = IMAGES.studio;
