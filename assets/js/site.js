@@ -250,7 +250,7 @@
       cat: 'portraits', slug: 'portrait-sessions', title: 'Portrait Sessions',
       plateCount: 6,
       heroFocus: 22, thumbFocus: 35,
-      platesFocus: [25, 29, 20, 27, 23, 26],
+      platesFocus: [0, 0, 0, 0, 0, 0],
       when: 'Recent',
       blurb: 'Individual sessions from across the year, photographed with one light and no rush.',
       story: [
