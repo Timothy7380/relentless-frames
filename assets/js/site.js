@@ -308,6 +308,38 @@
     return (m && m[key]) || (IMG + 'studio-0' + n + '.jpg');
   }
 
+  /* Some source photos put the subject's face well above the vertical
+     centre (a full-length shot, a bride under a veil, a speaker at a
+     lectern). Every hero/thumb/plate frame crops with object-fit:cover,
+     which centres on the image by default — fine for a landscape shot,
+     but it can crop straight through someone's face when the frame is
+     much shorter than the source photo. Where the manifest carries a
+     *Focus value (0-100, the vertical % to centre on) we use it instead
+     of the CSS default of 50%. */
+  function posStyle(v) {
+    return (typeof v === 'number') ? ' style="object-position:50% ' + v + '%"' : '';
+  }
+  function catHeroFocus(p) {
+    var m = IMAGES.categories[p.slug];
+    return m && m.heroFocus;
+  }
+  function catThumbFocus(p) {
+    var m = IMAGES.categories[p.slug];
+    return m && m.thumbFocus;
+  }
+  function shootHeroFocus(sh) {
+    var m = IMAGES.shoots[sh.slug];
+    return m && m.heroFocus;
+  }
+  function shootThumbFocus(sh) {
+    var m = IMAGES.shoots[sh.slug];
+    return m && m.thumbFocus;
+  }
+  function shootPlateFocus(sh, i) {
+    var m = IMAGES.shoots[sh.slug];
+    return m && Array.isArray(m.platesFocus) ? m.platesFocus[i] : undefined;
+  }
+
   /* ---------------------------------------------------------------- chrome */
   function markSvg() { return MARK; }
 
@@ -422,7 +454,8 @@
             // arrived yet, which reads as the swipe doing nothing.
             return '<div class="home-slide' + (i === 0 ? ' is-active' : '') + '" data-i="' + i + '">' +
               '<img src="' + catHero(p) + '" alt="" draggable="false" ' +
-              'decoding="async" fetchpriority="' + (i === 0 ? 'high' : 'low') + '">' +
+              'decoding="async" fetchpriority="' + (i === 0 ? 'high' : 'low') + '"' +
+              posStyle(catHeroFocus(p)) + '>' +
             '</div>';
           }).join('') +
         '</div>' +
@@ -518,7 +551,8 @@
           SHOOTS.map(function (sh) {
             var cat = bySlug(sh.cat);
             return '<a class="card reveal" href="#/work/' + sh.cat + '/' + sh.slug + '">' +
-              '<div class="card-frame"><img src="' + shootThumb(sh) + '" alt="' + esc(sh.title) + '" loading="lazy"></div>' +
+              '<div class="card-frame"><img src="' + shootThumb(sh) + '" alt="' + esc(sh.title) + '" loading="lazy"' +
+              posStyle(shootThumbFocus(sh)) + '></div>' +
               '<div class="card-meta">' +
                 '<span class="t">' + esc(sh.title) + '</span>' +
                 '<span class="m">' + esc(cat ? cat.title : '') + ' · ' + esc(sh.when) + '</span>' +
@@ -540,7 +574,7 @@
 
     return shell(
       '<div class="proj-hero"><img src="' + catHero(p) + '" alt="' +
-        esc(p.title) + '" draggable="false"></div>' +
+        esc(p.title) + '" draggable="false"' + posStyle(catHeroFocus(p)) + '></div>' +
 
       '<div class="wrap">' +
         '<div class="detail">' +
@@ -575,7 +609,7 @@
                 return '<a class="shoot-card reveal" href="#/work/' + p.slug + '/' + sh.slug + '">' +
                   '<div class="shoot-frame">' +
                     '<img src="' + shootThumb(sh) + '" alt="' + esc(sh.title) +
-                    '" loading="lazy" draggable="false">' +
+                    '" loading="lazy" draggable="false"' + posStyle(shootThumbFocus(sh)) + '>' +
                   '</div>' +
                   '<div class="shoot-info">' +
                     '<h3 class="shoot-title">' + esc(sh.title) + '</h3>' +
@@ -610,7 +644,7 @@
 
     return shell(
       '<div class="proj-hero"><img src="' + shootHero(sh) + '" alt="' +
-        esc(sh.title) + '" draggable="false"></div>' +
+        esc(sh.title) + '" draggable="false"' + posStyle(shootHeroFocus(sh)) + '></div>' +
 
       '<div class="wrap">' +
         '<nav class="crumbs" aria-label="Breadcrumb">' +
@@ -650,7 +684,8 @@
                 '<div class="gallery-frame">' +
                   plates.map(function (src, k) {
                     return '<div class="gallery-slide' + (k === 0 ? ' is-active' : '') + '" data-i="' + k + '">' +
-                      '<img src="' + src + '" alt="" loading="' + (k === 0 ? 'eager' : 'lazy') + '" draggable="false">' +
+                      '<img src="' + src + '" alt="" loading="' + (k === 0 ? 'eager' : 'lazy') + '" draggable="false"' +
+                      posStyle(shootPlateFocus(sh, k)) + '>' +
                     '</div>';
                   }).join('') +
                 '</div>' +
@@ -663,7 +698,7 @@
               '<div class="gallery-thumbs">' +
                 plates.map(function (src, k) {
                   return '<button class="gallery-thumb' + (k === 0 ? ' is-active' : '') + '" type="button" data-i="' + k + '" aria-label="Image ' + (k + 1) + ' of ' + plates.length + '">' +
-                    '<img src="' + src + '" alt="" loading="lazy">' +
+                    '<img src="' + src + '" alt="" loading="lazy"' + posStyle(shootPlateFocus(sh, k)) + '>' +
                   '</button>';
                 }).join('') +
               '</div>' +

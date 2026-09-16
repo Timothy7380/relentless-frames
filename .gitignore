@@ -9,3 +9,6 @@ node_modules/
 /Lifestyle/
 /Portraits/
 /Wedding/
+
+# Preview screenshots the assistant sent into chat (auto-saved here by the app)
+/Claude outputs/
