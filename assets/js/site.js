@@ -854,12 +854,13 @@
                     '<option>Architecture / interiors</option><option>Commercial / product</option>' +
                     '<option>Something else</option>' +
                   '</select></div>' +
-                '<div class="field"><label for="f-date">Date or window</label><input id="f-date" name="date" placeholder="e.g. March 2026"></div>' +
+                '<div class="field"><label for="f-date">Date</label><input id="f-date" name="date" type="date"></div>' +
               '</div>' +
               '<div class="field"><label for="f-msg">What are the pictures for?</label>' +
                 '<textarea id="f-msg" name="message" rows="4"></textarea></div>' +
+              '<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">' +
               '<button class="submit" type="submit">Send enquiry</button>' +
-              '<p class="form-note" id="formNote">This opens your mail app with the details filled in — nothing is sent from this page.</p>' +
+              '<p class="form-note" id="formNote">We reply within two working days.</p>' +
             '</form>' +
           '</div>' +
         '</div>' +
@@ -1259,20 +1260,49 @@
     if (!f) return;
     f.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (f.querySelector('[name="_honey"]').value) return;   // bot caught the honeypot
+
       var d = new FormData(f);
-      var body = [
+      var note = $('#formNote');
+      var btn = f.querySelector('.submit');
+      var mailBody = [
         'Name: ' + (d.get('name') || ''),
         'Email: ' + (d.get('email') || ''),
         'Commission type: ' + (d.get('type') || ''),
-        'Date or window: ' + (d.get('date') || ''),
+        'Date: ' + (d.get('date') || ''),
         '',
         d.get('message') || ''
       ].join('\n');
-      var href = 'mailto:' + STUDIO.email +
+      var mailtoFallback = 'mailto:' + STUDIO.email +
         '?subject=' + encodeURIComponent('Commission enquiry — ' + (d.get('type') || '')) +
-        '&body=' + encodeURIComponent(body);
-      $('#formNote').textContent = 'Opening your mail app…';
-      window.location.href = href;
+        '&body=' + encodeURIComponent(mailBody);
+
+      btn.disabled = true;
+      note.textContent = 'Sending…';
+
+      fetch('https://formsubmit.co/ajax/' + STUDIO.email, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: d.get('name') || '',
+          email: d.get('email') || '',
+          type: d.get('type') || '',
+          date: d.get('date') || '',
+          message: d.get('message') || '',
+          _subject: 'Commission enquiry — ' + (d.get('type') || ''),
+          _template: 'table'
+        })
+      }).then(function (res) {
+        if (!res.ok) throw new Error('bad status');
+        return res.json();
+      }).then(function () {
+        f.reset();
+        note.textContent = 'Sent — thank you. We reply within two working days.';
+      }).catch(function () {
+        note.innerHTML = 'Could not send automatically. <a href="' + mailtoFallback + '">Email us directly</a> instead.';
+      }).finally(function () {
+        btn.disabled = false;
+      });
     });
   }
 

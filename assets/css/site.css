@@ -506,6 +506,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 }
 .submit:hover{background:var(--ink);color:var(--paper)}
 .form-note{font-size:12px;color:var(--ink-50);margin:0}
+.form-note a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 
 /* ==========================================================================
    CATEGORY SUB-PAGE
