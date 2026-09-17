@@ -679,7 +679,19 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* ==========================================================================
    FOOTER
    ========================================================================== */
-.foot{border-top:1px solid var(--ink-14);margin-top:auto;padding-block:0 34px}
+/* Dark-brown footer: reuses --ink as a solid ground (same warm near-black
+   used for text everywhere else, so it reads as brand identity rather than
+   a new colour) and rewrites the ink-14/32/50/70 tints to their cream
+   equivalents so every rule below — kickers, links, hovers, dividers —
+   just works without being touched individually. */
+.foot{
+  margin-top:auto;padding-block:0 34px;
+  background:var(--ink);color:var(--cream);
+  --ink-70:var(--cream-70);
+  --ink-50:rgba(244,241,235,.50);
+  --ink-32:rgba(244,241,235,.32);
+  --ink-14:rgba(244,241,235,.14);
+}
 
 .foot-cta{
   display:flex;align-items:flex-start;justify-content:space-between;gap:32px;
@@ -707,7 +719,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   font-size:13px;color:var(--ink-70);transition:color .25s;
   overflow-wrap:anywhere;
 }
-.foot-col a:hover{color:var(--ink)}
+.foot-col a:hover{color:var(--cream)}
 .foot-col address{font-style:normal;font-size:13px;line-height:1.8;color:var(--ink-70)}
 
 .foot-bot{
