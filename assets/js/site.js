@@ -533,13 +533,16 @@
       '</section>';
   }
 
-  function shell(inner) {
-    return '<div class="page"><div class="page-main">' + inner + '</div>' + footer() + '</div>';
+  function shell(inner, opts) {
+    return '<div class="page"><div class="page-main">' + inner + '</div>' + footer(opts) + '</div>';
   }
 
   /* Footer, after the reference: a CTA block with the mark, labelled link
-     columns, then a fine-print row. Shown on every inner page. */
-  function footer() {
+     columns, then a fine-print row. Shown on every inner page — except the
+     CTA block itself, which is skipped on the Contact page since a "tell us
+     about your shoot" prompt makes no sense when you're already there. */
+  function footer(opts) {
+    opts = opts || {};
     var cats = PROJECTS.map(function (p) {
       return '<a href="#/work/' + p.slug + '">' + esc(p.title) + '</a>';
     }).join('');
@@ -547,13 +550,14 @@
     return '' +
       '<footer class="foot"><div class="wrap">' +
 
+        (opts.hideCta ? '' :
         '<div class="foot-cta">' +
           '<div class="foot-cta-text">' +
             '<span class="kicker">Start a project</span>' +
             '<a class="cta-link" href="#/contact">Tell us about your shoot</a>' +
           '</div>' +
           '<span class="cta-mark" aria-hidden="true">' + markSvg() + '</span>' +
-        '</div>' +
+        '</div>') +
 
         '<div class="foot-cols">' +
           '<nav class="foot-col">' +
@@ -864,7 +868,8 @@
             '</form>' +
           '</div>' +
         '</div>' +
-      '</div>'
+      '</div>',
+      { hideCta: true }
     );
   }
 
