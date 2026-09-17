@@ -713,7 +713,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   gap:36px 28px;padding-block:clamp(36px,4vw,56px);
 }
-.foot-col{display:flex;flex-direction:column;gap:11px;align-items:flex-start}
+.foot-col{display:flex;flex-direction:column;gap:11px;align-items:center;text-align:center}
 .foot-col .kicker{margin-bottom:6px}
 .foot-col a{
   font-size:13px;color:var(--ink-70);transition:color .25s;
