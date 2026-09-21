@@ -576,7 +576,7 @@
             '<span class="kicker">Connect</span>' +
             '<a href="mailto:' + esc(STUDIO.email) + '">' + esc(STUDIO.email) + '</a>' +
             '<a href="tel:' + esc(STUDIO.phone.replace(/[^0-9+]/g, '')) + '">' + esc(STUDIO.phone) + '</a>' +
-            '<a class="social-link" href="https://instagram.com/' + esc(STUDIO.instagram) + '" target="_blank" rel="noopener noreferrer" aria-label="Instagram">' +
+            '<a class="social-link" href="https://www.instagram.com/' + esc(STUDIO.instagram) + '/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">' +
               '<svg viewBox="0 0 20 20" aria-hidden="true">' +
                 '<rect x="3" y="3" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.4"/>' +
                 '<circle cx="10" cy="10" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4"/>' +
