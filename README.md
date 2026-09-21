@@ -95,11 +95,11 @@ for the exact steps.
 Everything editable lives at the top of `assets/js/site.js`:
 
 - **`STUDIO`** — name, tagline, email, phone, city, Instagram handle.
-  The email is currently the placeholder `studio@relentlessframes.com`;
-  change it there and it updates the footer, the Contact page and the
-  enquiry form's mailto in one go. The phone number is set to the studio's
-  real number and updates the footer's `tel:` link and the Contact page's
-  Telephone field the same way.
+  The email is `relentlessframes@gmail.com`; change it there and it
+  updates the footer, the Contact page and the enquiry form's mailto
+  (and FormSubmit delivery address) in one go. The phone number is set
+  to the studio's real number and updates the footer's `tel:` link and
+  the Contact page's Telephone field the same way.
 - **`PROJECTS`** — the five service categories, in the order they appear in
   the home filmstrip and as filter chips on the Work index. Each has a
   `slug` (must match the image filenames), `title`, `discipline`, `place`, a
@@ -171,10 +171,12 @@ allows all crawlers.
 
 Before launch, update in `index.html`:
 - the `relentlessframes.com` URLs in the canonical link, `og:url`, `og:image`
-  and JSON-LD `url` — to the real deployed domain
-- the JSON-LD `email` — still the placeholder `studio@relentlessframes.com`;
-  the real value in `STUDIO` (`site.js`) updates every page automatically,
-  but the JSON-LD block is static markup and needs its own edit. `telephone`
+  and JSON-LD `url` — still a placeholder domain (no domain has been
+  purchased yet) — to the real deployed domain once one exists
+- the JSON-LD `email` — now set to the real address,
+  `relentlessframes@gmail.com`, matching `STUDIO.email` in `site.js`.
+  Note the JSON-LD block is static markup, so if the email ever changes
+  again in `STUDIO`, this block needs its own separate edit. `telephone`
   in the JSON-LD block has already been set to the studio's real number
   (`+15739532532`), matching `STUDIO.phone` in `site.js` — keep the two in
   sync if the number ever changes again

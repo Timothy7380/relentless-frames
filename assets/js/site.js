@@ -12,7 +12,7 @@
   var STUDIO = {
     name: 'Relentless Frames',
     tagline: 'Photographs made by staying longer than anyone else would.',
-    email: 'studio@relentlessframes.com',
+    email: 'relentlessframes@gmail.com',
     phone: '+1(573)953-2532',
     city: 'St. Louis, Missouri',
     instagram: 'relentlessframes'
